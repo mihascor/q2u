@@ -1,8 +1,8 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Вопросы-Вопросы...',
+  title: 'Вопросы ∞ вопросы... и Понимание.',
   author: 'mihascor',
-  headerTitle: 'Вопросы-Вопросы...',
+  headerTitle: 'Вопросы ∞ вопросы... и Понимание.',
   description: 'Блог где можно тренировать критическое мышление',
   language: 'ru-RU',
   theme: 'system', // system, dark or light

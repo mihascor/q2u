@@ -110,3 +110,12 @@ export function Bluesky(svgProps: SVGProps<SVGSVGElement>) {
     </svg>
   )
 }
+
+export function Telegram(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <title>Telegram</title>
+      <path d="M9.04 15.472l-.378 5.318c.54 0 .774-.232 1.056-.51l2.53-2.423 5.244 3.836c.96.53 1.64.252 1.9-.89l3.444-16.138.001-.001c.31-1.452-.525-2.02-1.46-1.67L1.81 9.692c-1.41.55-1.39 1.34-.24 1.695l4.99 1.558 11.6-7.31c.545-.33 1.04-.147.632.183"/>
+    </svg>
+  )
+}

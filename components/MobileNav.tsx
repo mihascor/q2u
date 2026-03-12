@@ -10,16 +10,23 @@ const MobileNav = () => {
   const [navShow, setNavShow] = useState(false)
   const navRef = useRef(null)
 
+  useEffect(() => {
+    const nav = navRef.current
+    if (!nav) return
+  
+    if (navShow) {
+      disableBodyScroll(nav)
+    } else {
+      enableBodyScroll(nav)
+    }
+  
+    return () => {
+      clearAllBodyScrollLocks()
+    }
+  }, [navShow]) 
+
   const onToggleNav = () => {
-    setNavShow((status) => {
-      if (status) {
-        enableBodyScroll(navRef.current)
-      } else {
-        // Prevent scrolling
-        disableBodyScroll(navRef.current)
-      }
-      return !status
-    })
+    setNavShow((status) => !status)
   }
 
   useEffect(() => {
@@ -42,8 +49,8 @@ const MobileNav = () => {
           />
         </svg>
       </button>
-      <Transition appear show={navShow} as={Fragment} unmount={false}>
-        <Dialog as="div" onClose={onToggleNav} unmount={false}>
+      <Transition appear show={navShow} as={Fragment}>
+        <Dialog as="div" onClose={onToggleNav}>
           <TransitionChild
             as={Fragment}
             enter="ease-out duration-300"

@@ -1,6 +1,5 @@
 import { writeFileSync, mkdirSync } from 'fs'
 import path from 'path'
-import { slug } from 'github-slugger'
 import { escape } from 'pliny/utils/htmlEscaper.js'
 import siteMetadata from '../data/siteMetadata.js'
 import tagData from '../app/tag-data.json' with { type: 'json' }
@@ -8,6 +7,17 @@ import { allBlogs } from '../.contentlayer/generated/index.mjs'
 import { sortPosts } from 'pliny/utils/contentlayer.js'
 
 const outputFolder = process.env.EXPORT ? 'out' : 'public'
+
+const slugTag = (input) =>
+  String(input)
+    .normalize('NFKC')
+    .trim()
+    .toLowerCase()
+    .replace(/['’]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/[^\p{L}\p{N}-]+/gu, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
 
 const generateRssItem = (config, post) => `
   <item>
@@ -47,9 +57,10 @@ async function generateRSS(config, allBlogs, page = 'feed.xml') {
 
   if (publishPosts.length > 0) {
     for (const tag of Object.keys(tagData)) {
-      const filteredPosts = allBlogs.filter((post) => post.tags.map((t) => slug(t)).includes(tag))
-      const rss = generateRss(config, filteredPosts, `tags/${tag}/${page}`)
-      const rssPath = path.join(outputFolder, 'tags', tag)
+      const tagSlug = slugTag(tag)
+      const filteredPosts = allBlogs.filter((post) => post.tags.map((t) => slugTag(t)).includes(tagSlug))
+      const rss = generateRss(config, filteredPosts, `tags/${tagSlug}/${page}`)
+      const rssPath = path.join(outputFolder, 'tags', tagSlug)
       mkdirSync(rssPath, { recursive: true })
       writeFileSync(path.join(rssPath, page), rss)
     }

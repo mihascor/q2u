@@ -3,6 +3,7 @@
   "version": "2.4.0",
   "private": true,
   "scripts": {
+    "dev": "next dev",
     "start": "next dev",
     "build": "cross-env INIT_CWD=$PWD next build && cross-env NODE_OPTIONS='--experimental-json-modules' node ./scripts/postbuild.mjs",
     "serve": "next start",
@@ -72,5 +73,5 @@
     "*.+(js|jsx|ts|tsx|json|css|md|mdx)": [
       "yarn prettier --write"
     ]
-  },
+  }
 }

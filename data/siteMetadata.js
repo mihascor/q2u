@@ -1,18 +1,18 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Вопросы ∞ вопросы... и Понимание.',
-  author: 'mihascor',
-  headerTitle: 'Вопросы ∞ вопросы... и Понимание.',
-  description: 'Блог где можно тренировать критическое мышление',
+  title: 'Q2U',
+  author: 'Михаил Синютин',
+  headerTitle: 'от ВОПРОСОВ к ПОНИМАНИЮ',
+  description: '"Правила ты знаешь, но ВЫБОР всё равно остается за тобой...". <Михаил Синютин>',
   language: 'ru-RU',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
+  siteUrl: 'https://q2u-git-main-mihascors-projects.vercel.app/',
   // siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
   // mastodon: 'https://mastodon.social/@mastodonuser',
   // email: 'mihascorkiz@gmail.com',
-  telegram: 'https://t.me/quaestiones_quaestiones',
+  telegram: 'https://t.me/from_Q2U',
   // github: 'https://github.com',
   // x: 'https://twitter.com/x',
   // twitter: 'https://twitter.com/Twitter',
@@ -89,6 +89,9 @@ const siteMetadata = {
     provider: 'kbar', // kbar or algolia
     kbarConfig: {
       searchDocumentsPath: `${process.env.BASE_PATH || ''}/search.json`, // path to load documents to search
+      placeholder: 'Поиск...',
+      noResultsText: 'Ничего не найдено',
+      loadingText: 'Поиск...'
     },
     // provider: 'algolia',
     // algoliaConfig: {

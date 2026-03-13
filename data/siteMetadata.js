@@ -91,7 +91,7 @@ const siteMetadata = {
       searchDocumentsPath: `${process.env.BASE_PATH || ''}/search.json`, // path to load documents to search
       placeholder: 'Поиск...',
       noResultsText: 'Ничего не найдено',
-      loadingText: 'Поиск...'
+      loadingText: 'Поиск...',
     },
     // provider: 'algolia',
     // algoliaConfig: {

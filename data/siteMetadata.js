@@ -3,7 +3,7 @@ const siteMetadata = {
   title: 'Q2U',
   author: 'Михаил Синютин',
   headerTitle: 'от ВОПРОСОВ к ПОНИМАНИЮ',
-  description: '«Правила ты знаешь, но выбор всё равно остаётся за тобой…» — Михаил Синютин.',
+  description: 'Здесь можно изменить свое мышление.',
   language: 'ru-RU',
   theme: 'system', // system, dark or light
   siteUrl: 'https://q2u-git-main-mihascors-projects.vercel.app/',

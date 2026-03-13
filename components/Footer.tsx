@@ -28,9 +28,7 @@ export default function Footer() {
           <Link href="/">{siteMetadata.title}</Link>
         </div>
         <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
-          <Link href="https://codeatlas-chi.vercel.app/docs">
-            Site assembled mihascor
-          </Link>
+           <Link href="https://codeatlas-chi.vercel.app/docs">Сайт собран mihascor</Link>
         </div>
       </div>
     </footer>

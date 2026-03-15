@@ -6,7 +6,7 @@ const siteMetadata = {
   description: 'Здесь можно изменить свое мышление.',
   language: 'ru-RU',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://q2u-git-main-mihascors-projects.vercel.app/',
+  siteUrl: 'https://q2u.vercel.app/',
   // siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
